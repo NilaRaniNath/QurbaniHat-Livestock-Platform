@@ -19,27 +19,28 @@ export default function RegisterPage() {
 
  
   const onSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const name = e.target.name.value;
-    const image = e.target.image.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
+  const formData = new FormData(e.currentTarget);
 
-    const { data, error } = await authClient.signUp.email({
-      name,
-      email,
-      password,
-      image,
-      callbackURL: "/", 
-    });
+  const name = formData.get("name");
+  const image = formData.get("image");
+  const email = formData.get("email");
+  const password = formData.get("password");
 
-    console.log({ data, error });
+  const { error } = await authClient.signUp.email({
+    name,
+    email,
+    password,
+    image,
+  });
 
-    if (!error) {
-      router.push("/");
-    }
-  };
+  // console.log(error);
+
+  if (!error) {
+    router.push("/");
+  }
+};
 
   
   const handleGoogleRegister = async () => {
