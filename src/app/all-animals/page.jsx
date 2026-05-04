@@ -2,7 +2,7 @@ import React from 'react';
 import AnimalCard from '../components/AnimalCard';
 
 const AllAnimalsPage =async () => {
-     const res= await fetch('http://localhost:3000/data.json')
+     const res= await fetch('https://qurbani-hat-livestock-platform.vercel.app/data.json')
     const animals = await res.json();
     // console.log(animals)
     return (
