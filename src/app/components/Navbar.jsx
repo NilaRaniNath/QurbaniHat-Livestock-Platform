@@ -40,7 +40,7 @@ const Navbar = () => {
             <Link href={"/profile"}><CgProfile></CgProfile></Link>
           </li>
             <li>
-              <Link href={"/signup"}>SignUp</Link>
+              <Link href={"/register"}>Register</Link>
             </li>
             <li>
               <Link href={"/signin"}>SignIn</Link>
