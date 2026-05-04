@@ -8,7 +8,7 @@ const FeaturedAnimals = async() => {
     const topAnimals = animals.slice(0, 4);
     // console.log(topAnimals)
     return (
-        <div>
+        <div className='container mx-auto'>
             <h1 className='font-bold text-2xl my-5'>Featured animals </h1>
             <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
                 {topAnimals.map(animal => <AnimalCard key={animal.id} animal={animal}></AnimalCard>)}

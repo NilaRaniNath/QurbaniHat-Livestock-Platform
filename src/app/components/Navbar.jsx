@@ -31,15 +31,15 @@ const Navbar = () => {
         </div>
 
       
-        <ul className="flex items-center gap-3 md:gap-5 text-xs md:text-sm overflow-x-auto whitespace-nowrap pb-2 md:pb-0">
+        <ul className="flex items-center gap-3 md:gap-5 text-xs md:text-sm  whitespace-nowrap pb-2 md:pb-0">
           <li>
-            <Link href={"/"} className="border bg-red-400 text-white rounded-xl px-3 py-1 font-bold hover:bg-red-500 transition-all">Home</Link>
+            <Link href={"/"} className="border bg-gray-400 text-black rounded-xl p-1 font-bold hover:bg-red-300 transition-all">Home</Link>
           </li>
           <li>
-            <Link href={"/all-animals"} className="border bg-red-400 text-white rounded-xl px-3 py-1 font-bold hover:bg-red-500 transition-all">All Animals</Link>
+            <Link href={"/all-animals"} className="border bg-gray-400 text-black rounded-xl p-1 font-bold hover:bg-red-300 transition-all">All Animals</Link>
           </li>
           <li>
-            <Link href={"/profile"} className="border bg-red-400 text-white rounded-xl px-3 py-1 font-bold hover:bg-red-500 transition-all">Profile</Link>
+            <Link href={"/profile"} className="border bg-gray-400 text-black rounded-xl p-1 font-bold hover:bg-red-300 transition-all">Profile</Link>
           </li>
         </ul>
 
