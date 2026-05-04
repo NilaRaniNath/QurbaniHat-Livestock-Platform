@@ -1,3 +1,4 @@
+import { BookForm } from '@/app/components/BookForm';
 import { Button, Card } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -74,9 +75,10 @@ const AnimalDetailsPage = async ({params}) => {
                 <p className="text-sm text-gray-400">Price</p>
                 <p className="text-2xl font-bold text-green-700">৳ {animal.price.toLocaleString()}</p>
               </div>
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-lg active:scale-95">
-                Book Now
-              </button>
+              {/* <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-lg active:scale-95"> */}
+                <BookForm></BookForm>
+              {/* </Button> */}
+          
             </div>
           </div>
 
