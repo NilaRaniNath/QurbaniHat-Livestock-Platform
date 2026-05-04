@@ -1,5 +1,6 @@
-import { Avatar, Card, Chip } from "@heroui/react";
+import { Avatar, Button, Card, Chip } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { IoMdPricetags } from "react-icons/io";
 
@@ -30,7 +31,7 @@ const AnimalCard = ({animal}) => {
     <div className="card-actions justify-end">
       <p className="text-xl flex justify-center"><IoMdPricetags />{animal.price}</p>
       <div variant='outline'className="border rounded-xl p-1 text-white bg-pink-800">{animal.category}</div>
-      <button className="badge badge-outline bg-blue-950 text-white">Details</button>
+    <Link href={`/all-animals/${animal.id}`}> <Button className="badge badge-outline bg-blue-950 text-white">Details</Button></Link>
     </div>
   </div>
             </Card>
