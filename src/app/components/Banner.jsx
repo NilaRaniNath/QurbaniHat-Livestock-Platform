@@ -16,7 +16,7 @@ const Banner = () => {
           </p>
 
           <div className="flex justify-center gap-4">
-            <Link href="#">
+            <Link href="/all-animals">
               <Button className="bg-linear-to-r from-pink-500 via-purple-500 bg-red-500">
                 Browse All Animals
               </Button>

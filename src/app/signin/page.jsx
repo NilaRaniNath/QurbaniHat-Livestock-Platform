@@ -33,11 +33,14 @@ export default function SignInPage() {
     })
     
 
-    console.log({data, error})
+    console.log({data, error});
+    if (!error) {
+      router.push("/");
+    }
     };
      const handleGoogleSignIn=async() => {
         await authClient.signIn.social({
-            provider:'google'
+            provider:'google',
         })
 
     
@@ -108,7 +111,7 @@ export default function SignInPage() {
         </div>
       </Form>
 
-     <p className="text-center">Or</p>
+     <p className="text-center">OR</p>
      <Button onClick={handleGoogleSignIn}  variant='outline' className={'w-full'}><GrGoogle></GrGoogle> Sign In With Google</Button>
     </Card>
   );

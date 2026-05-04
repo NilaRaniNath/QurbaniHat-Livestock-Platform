@@ -1,9 +1,16 @@
 "use client";
+import { authClient } from "@/lib/auth.client";
 import Image from "next/image";
 import Link from "next/link";
-import { CgProfile } from "react-icons/cg";
+
 
 const Navbar = () => {
+
+   const userData = authClient.useSession();
+   const user=userData.data?.user;
+
+   console.log(user)
+
   return (
     <div className="border-b px-2">
       <nav className=" flex justify-between items-center  py-3 max-w-7xl mx-auto w-full">
@@ -28,18 +35,15 @@ const Navbar = () => {
           </li>
           {/* <li>
             <Link href={"/pricing"}>Pricing</Link>
-          </li>
+          </li> */}
           <li>
             <Link href={"/profile"}>Profile</Link>
-          </li> */}
+          </li>
         </ul>
 
         <div className="flex gap-4">
-          <ul className="flex items-center  text-sm">
-            <li>
-            <Link href={"/profile"}><CgProfile></CgProfile></Link>
-          </li>
-            <li>
+          <ul className="flex items-center  text-sm gap-2">
+          <li>
               <Link href={"/register"}>Register</Link>
             </li>
             <li>
