@@ -38,7 +38,7 @@ export function BookForm() {
                   </TextField>
                   
                   <TextField className="w-full" name="message">
-                    <Label>Message</Label>
+                    <Label>Address</Label>
                     <Input placeholder="Enter your message" />
                   </TextField>
                 </form>

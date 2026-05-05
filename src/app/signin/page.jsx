@@ -13,7 +13,7 @@ import {
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import { GrGoogle } from "react-icons/gr";
-
+import 'animate.css';
 export default function SignInPage() {
   const router = useRouter();
 
@@ -41,10 +41,12 @@ export default function SignInPage() {
   };
 
   return (
-    
-    <div className="flex justify-center items-center min-h-[80vh] p-4">
-      <Card className="border w-full max-w-112px py-10 px-6 sm:px-10">
-        <h1 className="text-center text-2xl font-bold mb-6">Sign In</h1>
+   
+    <div className="flex justify-center items-center min-h-screen w-full p-4 bg-gray-50/30">
+      
+      
+      <Card className="border w-full max-w-md py-8 px-6 sm:px-10 shadow-lg bg-white">
+        <h1 className="animate__animated animate__fadeInDown animate__delay-1s text-center text-2xl font-bold mb-6 text-gray-800">Sign In</h1>
 
         <Form className="flex flex-col gap-4 w-full" onSubmit={onSubmit}>
           <TextField
@@ -60,7 +62,7 @@ export default function SignInPage() {
             }}
           >
             <Label>Email</Label>
-            <Input placeholder="john@example.com" />
+            <Input placeholder="john@example.com" className="w-full" />
             <FieldError />
           </TextField>
 
@@ -79,37 +81,38 @@ export default function SignInPage() {
           >
             <Label>Password</Label>
             <Input placeholder="Enter your password" />
-            <Description>
+            <Description className="text-xs mt-1">
               Min 8 characters, 1 uppercase, 1 number
             </Description>
             <FieldError />
           </TextField>
 
-          <div className="flex flex-col sm:flex-row gap-2 mt-2">
-            <Button className="flex-1" type="submit">
-              <Check />
-              Submit
+         
+          <div className="flex flex-col sm:flex-row gap-3 mt-4">
+            <Button className="flex-1 bg-blue-600 text-white font-semibold" type="submit">
+              <Check className="mr-1" />
+              Sign In
             </Button>
-            <Button type="reset" variant="secondary" className="sm:w-24">
+            <Button type="reset" variant="secondary" className="w-full sm:w-24 border">
               Reset
             </Button>
           </div>
         </Form>
 
-    
-        <div className="flex flex-col items-center gap-4 mt-6 w-full">
+     
+        <div className="flex flex-col items-center gap-4 mt-8 w-full">
           <div className="flex items-center w-full gap-2 text-gray-400">
-            <hr className="flex-1 border-gray-300" />
-            <span className="text-sm">OR</span>
-            <hr className="flex-1 border-gray-300" />
+            <hr className="flex-1 border-gray-200" />
+            <span className="text-xs font-medium">OR</span>
+            <hr className="flex-1 border-gray-200" />
           </div>
 
           <Button
             onPress={handleGoogleSignIn}
             variant="ghost"
-            className="w-full flex items-center gap-2 border border-gray-300 hover:bg-gray-100"
+            className="animate__animated animate__fadeInDown animate__delay-1s w-full flex items-center justify-center gap-2 border border-gray-300 text-pink-700 hover:bg-gray-50 transition-all font-medium py-5"
           >
-            <GrGoogle className="text-xl" />
+            <GrGoogle className=" text-xl text-purple-500" />
             Sign In with Google
           </Button>
         </div>

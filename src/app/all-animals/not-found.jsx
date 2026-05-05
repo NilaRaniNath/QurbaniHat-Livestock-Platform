@@ -1,5 +1,6 @@
+"use client";
+import Link from 'next/link';
 import React from 'react';
-import { Link } from "react-router";
 import { FaArrowLeft, FaExclamationTriangle } from "react-icons/fa";
 
 const NotFoundPage = () => {
@@ -19,9 +20,7 @@ const NotFoundPage = () => {
       <h2 className="text-3xl font-bold text-gray-800 mb-4">
         Oops! Page Not Found
       </h2>
-      <p className="text-gray-500 max-w-md mb-8">
-        Tumi jeta khujcho sheti hoyto onno kothao soraye fela hoyeche othoba link-ti bhul. Ekbar check kore dekhte paro!
-      </p>
+      
 
       <div className="flex flex-col sm:flex-row gap-4">
         <Link 

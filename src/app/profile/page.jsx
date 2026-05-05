@@ -1,17 +1,12 @@
 "use client";
 
 import { Avatar, Card } from "@heroui/react";
-// import { redirect } from "next/navigation";
 import { UpdateUserModal } from "../components/UpdateuserModal";
 import { authClient } from "@/lib/auth.client";
 
 const ProfilePage = () => {
   const userData = authClient.useSession();
   const user = userData.data?.user;
-
-//   if(!user) {
-//     redirect('/signin')
-//   }
 
   return (
     <div>

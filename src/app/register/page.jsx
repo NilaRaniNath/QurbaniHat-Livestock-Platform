@@ -14,6 +14,8 @@ import {
 import { useRouter } from "next/navigation";
 import { GrGoogle } from "react-icons/gr";
 
+import 'animate.css';
+
 export default function RegisterPage() {
   const router = useRouter();
 
@@ -45,22 +47,26 @@ export default function RegisterPage() {
   };
 
   return (
-    
-    <div className="flex justify-center items-center min-h-screen p-4"> 
-      <Card className="border w-full max-w-125px py-10 px-6 sm:px-10">
-        <h1 className="text-center text-2xl font-bold mb-6">Register</h1>
+    <div className="flex justify-center items-center min-h-screen w-full p-4 bg-gray-50/50 overflow-hidden"> 
+      
+     
+      <Card className="animate__animated animate__zoomIn border w-full max-w-md py-8 px-6 sm:px-10 shadow-lg bg-white">
+        
+        
+        <h1 className="animate__animated animate__fadeInDown animate__delay-1s text-center text-2xl font-bold mb-6 text-gray-800">
+          Register
+        </h1>
 
-       
         <Form className="flex flex-col gap-4 w-full" onSubmit={onSubmit}>
           <TextField isRequired name="name" type="text" className="w-full">
             <Label>Name</Label>
-            <Input placeholder="Enter your name" />
+            <Input placeholder="Enter your name" className="w-full" />
             <FieldError />
           </TextField>
 
           <TextField isRequired name="image" type="text" className="w-full">
             <Label>Image URL</Label>
-            <Input placeholder="Image URL" />
+            <Input placeholder="Image URL" className="w-full" />
             <FieldError />
           </TextField>
 
@@ -77,7 +83,7 @@ export default function RegisterPage() {
             }}
           >
             <Label>Email</Label>
-            <Input placeholder="john@example.com" />
+            <Input placeholder="john@example.com" className="w-full" />
             <FieldError />
           </TextField>
 
@@ -96,36 +102,37 @@ export default function RegisterPage() {
           >
             <Label>Password</Label>
             <Input placeholder="Enter your password" />
-            <Description>
-              Must be at least 8 characters with 1 uppercase and 1 number
+            <Description className="text-xs mt-1">
+              At least 8 characters with 1 uppercase and 1 number
             </Description>
             <FieldError />
           </TextField>
 
-          <div className="flex flex-col sm:flex-row gap-2 mt-2">
-            <Button className="flex-1" type="submit">
-              <Check />
+          <div className="flex flex-col sm:flex-row gap-3 mt-4">
+            <Button className="flex-1 bg-blue-600 text-white font-semibold hover:scale-105 transition-transform" type="submit">
+              <Check className="mr-1" />
               Submit
             </Button>
-            <Button type="reset" variant="secondary" className="sm:w-24">
+            <Button type="reset" variant="secondary" className="w-full sm:w-24 border">
               Reset
             </Button>
           </div>
         </Form>
 
-        <div className="flex flex-col items-center gap-4 mt-6 w-full">
+        <div className="flex flex-col items-center gap-4 mt-8 w-full">
           <div className="flex items-center w-full gap-2 text-gray-400">
-            <hr className="flex-1 border-gray-300" />
-            <span className="text-sm">OR</span>
-            <hr className="flex-1 border-gray-300" />
+            <hr className="flex-1 border-gray-200" />
+            <span className="text-xs font-medium">OR</span>
+            <hr className="flex-1 border-gray-200" />
           </div>
 
+          
           <Button
             onPress={handleGoogleRegister}
             variant="ghost"
-            className="w-full flex items-center gap-2 border border-gray-700 hover:bg-gray-100"
+            className="animate__animated animate__fadeInUp animate__delay-1s w-full flex items-center justify-center gap-2 border border-gray-300 hover:bg-gray-50 transition-all font-medium py-5"
           >
-            <GrGoogle className="text-xl" />
+            <GrGoogle className="text-xl text-red-500" />
             Register with Google
           </Button>
         </div>

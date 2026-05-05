@@ -33,7 +33,7 @@ const qurbaniTips= [
 const QurbaniTips = () => {
     return (
         <div className='flex justify-between gap-4 items-center bg-gray-200 py-4 px-2 container mx-auto'>
-            <button className='btn bg-red-500 text-white'>Latest News</button>
+            <button className='btn bg-red-500 text-white'>Qurbani Tips</button>
             <Marquee pauseOnHover={true} speed={80}>
                 {qurbaniTips.map((n)=> (
                     <span key={n.id}>{n.title}</span>
