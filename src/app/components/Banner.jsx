@@ -5,6 +5,7 @@ import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css"; 
 
+
 const Banner = () => {
   useEffect(() => {
     AOS.init({

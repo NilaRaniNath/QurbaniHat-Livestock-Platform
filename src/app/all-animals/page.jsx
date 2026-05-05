@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import AnimalCard from '../components/AnimalCard';
 
+
+
+
 const AllAnimalsPage = () => {
     const [animals, setAnimals] = useState([]);
     const [sortedAnimals, setSortedAnimals] = useState([]);

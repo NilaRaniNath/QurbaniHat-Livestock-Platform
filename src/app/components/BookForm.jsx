@@ -1,9 +1,16 @@
 "use client";
 
-import {Envelope} from "@gravity-ui/icons";
-import {Button, Input, Label, Modal, Surface, TextField} from "@heroui/react";
+import { Envelope } from "@gravity-ui/icons";
+import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
+import { toast } from "react-toastify"; 
 
 export function BookForm() {
+  
+ 
+  const handleConfirm = () => {
+    toast.success("Booking Confirmed! We will contact you soon. 🐮");
+  };
+
   return (
     <Modal>
       <Button variant="secondary">Book Now</Button>
@@ -16,10 +23,6 @@ export function BookForm() {
                 <Envelope className="size-5" />
               </Modal.Icon>
               <Modal.Heading>Contact Us</Modal.Heading>
-              {/* <p className="mt-1.5 text-sm leading-5 text-muted">
-                Fill out the form below and well get back to you. The modal adapts automatically
-                when the keyboard appears on mobile.
-              </p> */}
             </Modal.Header>
             <Modal.Body className="p-6">
               <Surface variant="default">
@@ -48,7 +51,10 @@ export function BookForm() {
               <Button slot="close" variant="secondary">
                 Cancel
               </Button>
-              <Button slot="close">Confirm</Button>
+            
+              <Button slot="close" onPress={handleConfirm}>
+                Confirm
+              </Button>
             </Modal.Footer>
           </Modal.Dialog>
         </Modal.Container>

@@ -13,7 +13,7 @@ import {
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import { GrGoogle } from "react-icons/gr";
-
+import { toast } from "react-toastify"; // Toast ইমপোর্ট করা হয়েছে
 import 'animate.css';
 
 export default function RegisterPage() {
@@ -34,24 +34,34 @@ export default function RegisterPage() {
       image,
     });
 
-    if (!error) {
+    if (error) {
+      // রেজিস্ট্রেশনে ভুল থাকলে এরর মেসেজ দেখাবে
+      toast.error(error.message || "Registration failed. Please try again!");
+    } else {
+      // সফল হলে সাকসেস মেসেজ দেখাবে
+      toast.success("Registration Successful! Welcome to QurbaniHat 🐮");
       router.push("/");
     }
   };
 
   const handleGoogleRegister = async () => {
-    await authClient.signIn.social({
-      provider: "google",
-      callbackURL: "/",
-    });
+    try {
+      await authClient.signIn.social({
+        provider: "google",
+        callbackURL: "/",
+      });
+      // সোশ্যাল সাইন ইনের ক্ষেত্রে সাধারণত কলব্যাক হ্যান্ডেল করে, 
+      // তবে এখানে একটি প্রাথমিক মেসেজ দেওয়া যেতে পারে
+      toast.info("Redirecting to Google...");
+    } catch (err) {
+      toast.error("Google Registration failed!");
+    }
   };
 
   return (
     <div className="flex justify-center items-center min-h-screen w-full p-4 bg-gray-50/50 overflow-hidden"> 
       
-     
       <Card className="animate__animated animate__zoomIn border w-full max-w-md py-8 px-6 sm:px-10 shadow-lg bg-white">
-        
         
         <h1 className="animate__animated animate__fadeInDown animate__delay-1s text-center text-2xl font-bold mb-6 text-gray-800">
           Register
@@ -126,7 +136,6 @@ export default function RegisterPage() {
             <hr className="flex-1 border-gray-200" />
           </div>
 
-          
           <Button
             onPress={handleGoogleRegister}
             variant="ghost"

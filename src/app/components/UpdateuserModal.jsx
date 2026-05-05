@@ -1,9 +1,9 @@
 "use client";
 
-
 import { authClient } from "@/lib/auth.client";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
 import { BiEdit, BiUser } from "react-icons/bi";
+import { toast } from "react-toastify"; 
 
 export function UpdateUserModal() {
   const onSubmit = async (e) => {
@@ -11,13 +11,19 @@ export function UpdateUserModal() {
     const name = e.target.name.value;
     const image = e.target.image.value;
 
-    await authClient.updateUser({
-        name,
-        image
-    })
+    const { data, error } = await authClient.updateUser({
+      name,
+      image
+    });
 
-    
+   
+    if (error) {
+      toast.error(error.message || "Failed to update profile!");
+    } else {
+      toast.success("Profile updated successfully! ✨");
+    }
   };
+
   return (
     <Modal>
       <Button variant="secondary">

@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🐮 Project Name:  QurbaniHat - Livestock Booking Platform  
+QurbaniHat is a modern, full-stack marketplace designed to simplify the process of purchasing and booking livestock for the Qurbani season. By combining a user-friendly interface with a robust booking system, it bridges the gap between traditional livestock sellers and modern buyers.
 
-## Getting Started
+🚀 Live URL: https://qurbani-hat-livestock-platform.vercel.app/
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🎯 Purpose
+The goal of this project is to provide a seamless, digital alternative to traditional livestock markets (Haats). It ensures:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Convenience: Browse and book animals from home.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+**Trust: Detailed livestock information and authenticated user reviews.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Safety: A secure environment for transactions and user data management.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+✨ Key Features:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🔐 Secure Authentication
+Comprehensive Auth: Supports Email/Password registration and login.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Social Login: Integrated Google Authentication for quick access.
 
-## Deploy on Vercel
+Protected Routes: Only authenticated users can access booking and profile management.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🐄 Livestock Catalog
+Dynamic Grid: Responsive display of available animals with high-quality images.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Real-time Booking: A smart modal-based booking system with instant UI feedback.
+
+Category Management: Easily browse through local and exotic breeds.
+
+👤 User Profile Dashboard
+Interactive Profile: Users can view and manage their personal details.
+
+Profile Updates: Built-in modal functionality to update profile pictures and display names.
+
+🎨 Premium UI/UX
+Staggered Animations: Uses Animate.css for smooth entrance effects on cards and headers.
+
+Scroll Animations: Integrated AOS (Animate On Scroll) for a dynamic browsing experience.
+
+Mobile First: 100% responsive design optimized for smartphones, tablets, and desktops.
+
+
+
+NPM Packages:
+
+
+animate.css: Provides the core CSS animation library for entrance and exit effects.
+
+aos: Handles the scroll detection and triggers CSS transitions based on the scroll position.
+
+react-toastify: Works in tandem with these animations to provide animated, non-intrusive success and error notifications.
